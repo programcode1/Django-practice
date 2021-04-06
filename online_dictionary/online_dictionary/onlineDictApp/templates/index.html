@@ -9,10 +9,10 @@
        <input type='text' name='defination' placeholder='enter defination'><br>
        <input type='text' name='exmaple' placeholder='enter exmaple'><br>
        <input type='submit' value='submit'>
-
+   </form>
     {% for item in all_items %}
         <a href={% url 'post' item.id %}><p>{{item.letter}}</p></a>
     {% endfor %}
-   </form>
+  
 </body>
 </html>

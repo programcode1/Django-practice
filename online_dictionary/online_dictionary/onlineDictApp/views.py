@@ -8,16 +8,16 @@ def home(request):
 
         if form.is_valid():
             form.save()
-            all_items = onlineDictionary.objects.all()
+            all_items = onlineDictionary.objects.all().order_by('letter')
             return render(request,'index.html',{'all_items':all_items})
 
     else:
-        all_items = onlineDictionary.objects.all()
+        all_items = onlineDictionary.objects.all().order_by('letter')
         return render(request,'index.html',{'all_items':all_items})
 
 
 
 def posts(request,pk_test):
-    letter = onlineDictionary.objects.get(id=pk_test)
-    return render(request,'posts.html',{'post':letter})
+    post = onlineDictionary.objects.get(id= pk_test)
+    return render(request,'posts.html',{'post':post})
 
