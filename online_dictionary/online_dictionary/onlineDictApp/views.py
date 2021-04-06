@@ -19,5 +19,5 @@ def home(request):
 
 def posts(request,pk_test):
     letter = onlineDictionary.objects.get(id=pk_test)
-    return render(request,'index.html',{'letter':letter})
+    return render(request,'posts.html',{'post':letter})
 
